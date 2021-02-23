@@ -1,0 +1,17 @@
+num = int(input("enter fibonacci number index: "))
+
+def fib(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        if i <= 1:
+            yield i
+        elif i > 1 and i % 2 == 0:
+            a = a+b
+            yield a
+        elif i > 1 and i % 2 != 0:
+            b = a + b
+            yield b
+
+for i in fib(num):
+    print(i)
